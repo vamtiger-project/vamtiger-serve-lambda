@@ -1,0 +1,51 @@
+{
+    "name": "vamtiger-serve-lambda",
+    "version": "0.0.7-0",
+    "description": "A utility to serve aws lambda projects locally for integration testing.",
+    "main": "build",
+    "bin": {
+        "vamtiger-serve-lambda": "build/bin.js"
+    },
+    "scripts": {
+        "test": "npm run test-bundle && npm run mocha",
+        "mocha": "mocha build/test --recursive",
+        "clean": "rm -rf build/*",
+        "build": "npm run clean && tsc",
+        "build-bin": "tsc --project tsconfig-bin.json",
+        "test-build": "tsc",
+        "build-types": "npm run clean && tsc --project tsconfig-declaration.json",
+        "test-build-types": "tsc --project tsconfig-declaration.json",
+        "commit": "npm run bundle && vamtiger-node-typescript-commit --push --publish --buildScript bundle",
+        "bundle": "npm run test && npm run build-types && npm run build-bin && vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --minify --copySourceMap",
+        "test-bundle": "npm run test-build && npm run test-build-types && vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --minify --copySourceMap",
+        "watch": "npm run clean && npm run build-types && vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --minify --copySourceMap --watch",
+        "test-watch": "npm run test-build && npm run test-build-types && vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --minify --copySourceMap --watch"
+    },
+    "keywords": [
+        "redblade",
+        "serve",
+        "lambda"
+    ],
+    "author": "Redblade Software",
+    "license": "MIT",
+    "types": "build/index.d.ts",
+    "devDependencies": {
+        "@types/chai": "^4.1.4",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.9.0",
+        "@types/request": "^2.47.1",
+        "@types/request-promise": "^4.1.42",
+        "chai": "^4.1.2",
+        "mocha": "^5.2.0",
+        "request": "^2.88.0",
+        "request-promise": "^4.2.2",
+        "typescript": "^3.0.1",
+        "vamtiger-bundle-typescript": "latest",
+        "vamtiger-node-typescript-commit": "latest"
+    },
+    "dependencies": {
+        "vamtiger-argv": "^1.2.3",
+        "vamtiger-debug-server": "latest",
+        "vamtiger-require": "latest"
+    }
+}
