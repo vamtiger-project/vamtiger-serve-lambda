@@ -52,6 +52,10 @@ redblade-serve-lambda --port 8888 -H path/to/custom/request/handler
     //..
 }
 ```
+The lambda function can then be served by running:
+```bash
+npm run serve
+```
 
 All HTTP requests made will then locally invoke/debug lambda function:
 ```javascript
