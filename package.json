@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-serve-lambda",
-    "version": "0.0.7",
+    "version": "0.0.8-0",
     "description": "A utility to serve aws lambda projects locally for integration testing.",
     "main": "build",
     "bin": {
@@ -22,11 +22,11 @@
         "test-watch": "npm run test-build && npm run test-build-types && vamtiger-bundle-typescript --relativePath --entryFilePath source/index.ts --bundleFilePath build/index.js --format cjs --sourcemap true --minify --copySourceMap --watch"
     },
     "keywords": [
-        "redblade",
+        "vamtiger",
         "serve",
         "lambda"
     ],
-    "author": "Redblade Software",
+    "author": "Vamtiger Imortalles",
     "license": "MIT",
     "types": "build/index.d.ts",
     "devDependencies": {
