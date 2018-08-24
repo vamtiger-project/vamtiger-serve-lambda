@@ -6,6 +6,14 @@
     "bin": {
         "vamtiger-serve-lambda": "build/bin.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vamtiger-project/vamtiger-serve-lambda.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vamtiger-project/vamtiger-serve-lambda/issues"
+    },
+    "homepage": "https://github.com/vamtiger-project/vamtiger-serve-lambda#readme",
     "scripts": {
         "test": "npm run test-bundle && npm run mocha",
         "mocha": "mocha build/test --recursive",

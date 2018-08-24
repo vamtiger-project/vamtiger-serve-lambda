@@ -1,4 +1,4 @@
-# VAMTIGER Serve AWS Lambda
+# VAMTIGER Serve Lambda
 A utility to serve aws lambda projects locally for debugging and integration testing.
 
 ## Installation
