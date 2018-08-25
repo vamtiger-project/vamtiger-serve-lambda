@@ -32,8 +32,8 @@
     "keywords": [
         "vamtiger",
         "serve",
-        "aws",
         "lambda",
+        "aws",
         "debug",
         "vscode",
         "testing"
