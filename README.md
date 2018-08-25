@@ -18,7 +18,7 @@ yarn global vamtiger-serve-lambda #global
 ```bash
 # path/to/file.js
 # export default lambda(event, context, callback)...
-redblade-serve-lambda --port 8888 --path path/to/file.default
+vamtiger-serve-lambda --port 8888 --path path/to/file.default
 ```
 
 When using *export default*, the --path will be inferred from *package.json*:
@@ -32,12 +32,12 @@ When using *export default*, the --path will be inferred from *package.json*:
 }
 ```
 ```bash
-redblade-serve-lambda --port 8888
+vamtiger-serve-lambda --port 8888
 ```
 
 A custom *Request Handler* can also be defined using the *_--handleRequest_* or *_-H_* option:
 ```bash
-redblade-serve-lambda --port 8888 -H path/to/custom/request/handler
+vamtiger-serve-lambda --port 8888 -H path/to/custom/request/handler
 ```
 
 [VAMTIGER Serve Lambda](https://github.com/vamtiger-project/vamtiger-serve-lambda) can also be defined as an [npm](https://www.npmjs.com/) script:
