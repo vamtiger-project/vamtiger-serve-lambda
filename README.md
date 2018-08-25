@@ -1,5 +1,5 @@
 # VAMTIGER Serve Lambda
-A utility to serve aws lambda projects locally for debugging and integration testing.
+A utility to serve aws lambda projects for local debugging and integration testing. It simulates deployment, and can be used across multiple labmda projects.
 
 ## Installation
 [VAMTIGER Serve Lambda](https://github.com/vamtiger-project/vamtiger-serve-lambda) can be installed using [npm](https://www.npmjs.com/) or [yarn]():
@@ -52,12 +52,32 @@ vamtiger-serve-lambda --port 8888 -H path/to/custom/request/handler
     //..
 }
 ```
+
 The lambda function can then be served by running:
 ```bash
 npm run serve
 ```
+It can also be debugged in [Visual Studio Code](https://code.visualstudio.com/):
+```json
+// launch.json
+[
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "vamtiger-serve-lambda",
+        "program": "${workspaceRoot}/node_modules/vamtiger-serve-lambda/build/bin",
+        "args": [
+            "-p",
+            "8888"
+        ],
+        "outFiles": [
+            "${workspaceRoot}/build/**/*.js"
+        ]
+    }
+]
+```
 
-All HTTP requests made will then locally invoke/debug lambda function:
+All HTTP requests made will then locally invoke locally served lambda function:
 ```javascript
 const post = require('request-promise');
 const params = {
