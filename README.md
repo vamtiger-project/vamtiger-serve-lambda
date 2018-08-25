@@ -80,7 +80,7 @@ It can also be debugged in [Visual Studio Code](https://code.visualstudio.com/):
 }
 ```
 
-All HTTP requests made will then locally invoke locally served lambda function:
+All HTTP requests made will then invoke locally served lambda function:
 ```javascript
 const post = require('request-promise');
 const params = {
