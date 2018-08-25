@@ -60,21 +60,24 @@ npm run serve
 It can also be debugged in [Visual Studio Code](https://code.visualstudio.com/):
 ```json
 // launch.json
-[
-    {
-        "type": "node",
-        "request": "launch",
-        "name": "vamtiger-serve-lambda",
-        "program": "${workspaceRoot}/node_modules/vamtiger-serve-lambda/build/bin",
-        "args": [
-            "-p",
-            "8888"
-        ],
-        "outFiles": [
-            "${workspaceRoot}/build/**/*.js"
-        ]
-    }
-]
+{
+    "version": "0.2.0",
+    "configurations":[
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "vamtiger-serve-lambda",
+            "program": "${workspaceRoot}/node_modules/vamtiger-serve-lambda/build/bin",
+            "args": [
+                "-p",
+                "8888"
+            ],
+            "outFiles": [
+                "${workspaceRoot}/build/**/*.js"
+            ]
+        }
+    ]
+}
 ```
 
 All HTTP requests made will then locally invoke locally served lambda function:

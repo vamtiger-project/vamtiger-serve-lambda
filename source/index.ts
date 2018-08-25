@@ -75,8 +75,6 @@ export function getLambdaPath({ path: relativePath }: IGetLambdaPathParams) {
         relativePath || `${mainPath}.default`
     );
 
-    console.log(lambdaPath);
-
     return lambdaPath;
 }
 
