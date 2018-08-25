@@ -33,7 +33,10 @@
         "vamtiger",
         "serve",
         "aws",
-        "lambda"
+        "lambda",
+        "debug",
+        "vscode",
+        "testing"
     ],
     "author": "Vamtiger Imortalles",
     "license": "MIT",
