@@ -1,6 +1,6 @@
 {
     "name": "vamtiger-serve-lambda",
-    "version": "0.0.16",
+    "version": "0.0.17-0",
     "description": "A utility to serve aws lambda projects locally for integration testing.",
     "main": "build",
     "bin": {
@@ -32,8 +32,8 @@
     "keywords": [
         "vamtiger",
         "serve",
-        "aws",
         "lambda",
+        "aws",
         "debug",
         "vscode",
         "testing"
