@@ -71,16 +71,13 @@ It can also be debugged in [Visual Studio Code](https://code.visualstudio.com/):
             "args": [
                 "-p",
                 "8888"
-            ],
-            "outFiles": [
-                "${workspaceRoot}/build/**/*.js"
             ]
         }
     ]
 }
 ```
 
-All HTTP requests made will then invoke locally served lambda function:
+All HTTP requests made will then invoke the locally served lambda function:
 ```javascript
 const post = require('request-promise');
 const params = {
