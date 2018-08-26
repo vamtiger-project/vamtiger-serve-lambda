@@ -4,12 +4,12 @@ A utility to serve aws lambda projects for local debugging and integration testi
 ## Installation
 [VAMTIGER Serve Lambda](https://github.com/vamtiger-project/vamtiger-serve-lambda) can be installed using [npm](https://www.npmjs.com/) or [yarn]():
 ```bash
-npm i --save vamtiger-serve-lambda # local
+npm i --save-dev vamtiger-serve-lambda # local
 npm i --global vamtiger-serve-lambda # global
 ```
 or
 ```bash
-yarn add vamtiger-serve-lambda #local
+yarn add --dev vamtiger-serve-lambda #local
 yarn global vamtiger-serve-lambda #global
 ```
 
