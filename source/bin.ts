@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { resolve as resolvePath } from 'path';
 import Require from 'vamtiger-require';
-import Args = require('vamtiger-argv');
+import Args from 'vamtiger-argv/build/main';
 import startLambdaSever, { CommandlineArguments, ErrorMessage, IEvent, IBody, IResponse, getLambdaPath } from '.';
 
 const args = new Args();
@@ -18,8 +18,9 @@ const lambdaPath = getLambdaPath({
     path: args.get(CommandlineArguments.P) || args.get(CommandlineArguments.path)
 });
 
-if (!lambdaPath)
+if (!lambdaPath) {
     throw new Error(ErrorMessage.lambdaPath);
+}
 
 try {
     startLambdaSever({
