@@ -1,10 +1,5 @@
 /// <reference types="node" />
 import { IncomingMessage, ServerResponse } from 'http';
-export default function startLambdaSever({ port, handleRequestPath, path: lambdaPath }: IParams): Promise<void>;
-export declare function stopLambdaServer(): Promise<void>;
-export declare function handleRequest(request: IncomingMessage, response: ServerResponse): Promise<void>;
-export declare function sendResponse({ error, result, response }: ISendResponseParams): void;
-export declare function getLambdaPath({ path: relativePath }: IGetLambdaPathParams): string;
 export interface IParams {
     port: number | string;
     handleRequestPath: string;
@@ -43,10 +38,17 @@ export declare enum CommandlineArguments {
     port = "port",
     p = "p",
     handleRequest = "handleRequest",
-    H = "H"
+    H = "H",
+    body = "body",
+    b = ""
 }
 export declare enum ErrorMessage {
     lambdaPath = "No Lamda path defined"
 }
 export declare type Callback<T> = (error: Error | null | undefined, result: T) => void;
 export declare type Lamda = (event: IEvent, context: AnyObject, callback: Callback<IResponse>) => Promise<void>;
+export default function startLambdaSever({ port, handleRequestPath, path: lambdaPath }: IParams): Promise<void>;
+export declare function stopLambdaServer(): Promise<void>;
+export declare function handleRequest(request: IncomingMessage, response: ServerResponse): Promise<void>;
+export declare function sendResponse({ error, result, response }: ISendResponseParams): void;
+export declare function getLambdaPath({ path: relativePath }: IGetLambdaPathParams): string;

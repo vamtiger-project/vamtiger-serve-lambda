@@ -2,9 +2,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
-const Args = require("vamtiger-argv");
+const main_1 = require("vamtiger-argv/build/main");
 const _1 = require(".");
-const args = new Args();
+const args = new main_1.default();
 const defaults = {
     port: 8888,
     handleRequestPath: path_1.resolve(__dirname, 'index.handleRequest')
@@ -14,8 +14,9 @@ const handleRequestPath = args.get(_1.CommandlineArguments.H) || args.get(_1.Com
 const lambdaPath = _1.getLambdaPath({
     path: args.get(_1.CommandlineArguments.P) || args.get(_1.CommandlineArguments.path)
 });
-if (!lambdaPath)
+if (!lambdaPath) {
     throw new Error(_1.ErrorMessage.lambdaPath);
+}
 try {
     _1.default({
         port,
