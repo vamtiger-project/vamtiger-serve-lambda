@@ -70,7 +70,7 @@ const defaults = {
     },
     context: {}
 };
-const bodyResponse = args.get(CommandlineArguments.b) || args.get(CommandlineArguments.body);
+const bodyResponse = args.has(CommandlineArguments.b) || args.has(CommandlineArguments.body);
 
 let server: Server | undefined;
 let lamda: Lamda;
